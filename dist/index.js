@@ -75,6 +75,7 @@ function getArray(items) {
 }
 const numArray = getArray([1, 2, 3, 4]);
 const strArray = getArray(['brad', 'will', 'smith']);
+//////////////////////////////////////////////////////////
 const eligiblity = 20;
 if (eligiblity >= 20) {
     console.log("you can vote");
@@ -158,7 +159,14 @@ const Moyowa = {
     name: 'Moyowa',
     languages: ['html', 'css', 'javascript']
 };
+const Precious = {
+    id: 2,
+    name: 'Precious',
+    languages: ['English', 'Igbo'],
+    age: 21
+};
 console.log(Moyowa.languages, Moyowa.name);
+console.log(Precious.languages, Precious.age, Precious.name);
 const check = (f, s) => f + s;
 console.log(check);
 class aNigga {
@@ -194,9 +202,50 @@ const rev = new placeSubClass(4, 'Peter', 'Dubai', '3.3billion');
 console.log(rev.name, rev.register());
 //generics 
 function showArray(items) {
-    return new Array().concat(items);
+    // return new Array().concat(items)
+    return Object.assign({}, items);
 }
 let numberArray = showArray([1, 2, 3, 4, 5]);
 let stringArray = showArray(['Moyowa', 'Peter']);
-stringArray.push('1');
+// stringArray.push('1')
 console.log(stringArray);
+// //form 
+// const Form = document.querySelector('.form') as HTMLFormElement
+// console.log(Form.children)
+// const Name = document.querySelector("#name") as HTMLInputElement
+// const Email = document.querySelector("#email")  as HTMLInputElement
+// const Select = document.querySelector("#select") as HTMLSelectElement
+//generics 
+function displayFruits(items) {
+    return new Array(items);
+}
+const fruitsArray = displayFruits(['apple', 'mango', 'pineapple', 'grape']);
+console.log(fruitsArray.toString());
+const resources = {
+    resourceName: 'Skittlesyrn'
+};
+console.log(resources);
+//to create interface objects
+const aPaigon = {
+    Name: "Pope Skittles",
+    languages: ["HTML", "CSS", "JS", "REACT", "VUE"],
+    check() {
+        if (aPaigon.languages.length > 10) {
+            console.log("you sabi'");
+        }
+        else {
+            console.log("you dey try");
+        }
+    }
+};
+aPaigon.languages.push("typescript", "Node.js", "tailwindCSS");
+console.log(aPaigon.check());
+console.log(aPaigon.languages.toString());
+//class to implement interface
+class Skittles {
+    constructor(Name) {
+        this.Name = Name;
+    }
+}
+const anotherPerson = new Skittles('Badman Skittles');
+console.log(anotherPerson.Name);
